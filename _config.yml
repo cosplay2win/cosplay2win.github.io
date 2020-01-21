@@ -16,14 +16,15 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Site Title"
+title                    : "Cosplay2Win"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "Your Name"
-description              : "An amazing website."
-url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
-baseurl                  : # the subpath of your site, e.g. "/blog"
-repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+name                     : "Cosplay2Win"
+description              : "My personal cosplay portfolio."
+url                      : https://cosplay2win.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+baseurl                  : "" # the subpath of your site, e.g. "/blog"
+repository               : cosplay2win/cosplay2win.github.io # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+root                     : "https://cosplay2win.github.io"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
@@ -107,10 +108,10 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an **amazing** person."
-  location         : "Somewhere"
+  name             : "Arden"
+  avatar           : "/images/profile/profile_circ.png"
+  bio              : "Cosplayer, chef, cat lover, and clothing maker."
+  location         : "USA"
   email            :
   links:
     - label: "Email"
@@ -130,7 +131,7 @@ author:
       # url: "https://github.com/"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
-      # url: "https://instagram.com/"
+      url: "https://instagram.com/cosplay2win"
 
 # Site Footer
 footer:
@@ -152,7 +153,7 @@ footer:
       # url:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
-      # url:
+      url: "https://instagram.com/cosplay2win"
 
 
 # Reading Files
@@ -180,6 +181,7 @@ exclude:
   - log
   - node_modules
   - package.json
+  - Makefile
   - Rakefile
   - README
   - tmp
@@ -220,8 +222,8 @@ sass:
 
 # Outputting
 permalink: /:categories/:title/
-paginate: 5 # amount of posts to show
-paginate_path: /page:num/
+# paginate: 5 # amount of posts to show
+# paginate_path: /page:num/
 timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
@@ -241,6 +243,11 @@ whitelist:
   - jekyll-feed
   - jekyll-include-cache
 
+# Collections
+collections:
+  portfolio:
+    output: true
+    permalink: /:collection/:path/
 
 # Archives
 #  Type
@@ -285,6 +292,17 @@ defaults:
   - scope:
       path: ""
       type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: # true
+      share: true
+      related: true
+  # _portfolio
+  - scope:
+      path: ""
+      type: portfolio
     values:
       layout: single
       author_profile: true
